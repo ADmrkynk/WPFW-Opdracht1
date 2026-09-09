@@ -1,0 +1,156 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #f9fafb;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    outline: none;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: #111827;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+article, 
+aside {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+article img,
+section img {
+    border-radius: 6px;
+    margin: 0.75rem 0;   
+}
+
+article ul,
+aside ul {
+    list-style-position: inside;
+    margin-bottom: 1rem;
+    color: #4b5563;
+}
+
+time {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+article a,
+section a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+article a:hover,
+section a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+
+    main:has(aside) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    main section:nth-of-type(2) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    article {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1025px) {
+    
+    main section:nth-of-type(2) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    nav ul {
+        gap: 2.5rem;
+    }
+}
