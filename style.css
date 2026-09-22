@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto Mono', monospace;
     line-height: 1.6;
     color: #1f2937;
     background-color: #f9fafb;
@@ -24,9 +24,19 @@ img {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
-    padding: 1rem;
+    padding: 0.75rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1f2937;
+    text-decoration: none;
 }
 
 nav ul {
@@ -34,20 +44,32 @@ nav ul {
     flex-wrap: wrap;
     list-style: none;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 0.75rem;
 }
 
 nav a {
     color: #3BAC90;
+    background-color: #f3f4f6;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
     padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-nav a:hover,
+nav a:hover {
+    background-color: #3BAC90;
+    color: #ffffff
+}
+
+nav a.active {
+    background-color: #1e7368;
+    color: #ffffff;
+    border-radius: 9999px;
+}
+
 nav a:focus {
     background-color: #eff6ff;
     color: #3BAC90;
@@ -119,6 +141,49 @@ section a:hover {
     text-decoration: underline;
 }
 
+.profile-card, aside {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.profile-card {
+    overflow: hidden;
+    text-align: center;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.profile-banner {
+    height: 200px;
+    background: linear-gradient(135deg, #1e7e68, #3BAC90);
+    margin: 0 -1.5rem;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    object-position: 0% 40%;
+
+    border: 2px solid #ffffff00;
+    margin: -65px auto 1rem;
+    display: block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h1 {
+    margin-bottom: 0.5rem;
+}
+
+.profile-card p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
 footer {
     background-color: #ffffff;
     border-top: 1px solid #e5e7eb;
@@ -162,6 +227,6 @@ footer p {
     }
 
     nav ul {
-        gap: 2.5rem;
+        gap: 0.75rem;
     }
 }

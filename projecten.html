@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projecten</title>
     <link rel="stylesheet" href='style.css'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
 <header>
+    <a href="index.html" class="logo">&lt;Arda Demirkaynak/&gt;</a>
     <nav>
         <ul>
             <li><a href="index.html">Over mij</a></li>
-            <li><a href="projecten.html">Projecten</a></li>
+            <li><a href="projecten.html" class="active" aria-current="page">Projecten</a></li>
             <li><a href="blog.html">Blog</a></li>            
         </ul>
     </nav>
@@ -31,10 +37,27 @@
     <section>
 
         <article>
-            <h2>Voorbeeld opdracht</h2>
-            <img src="images/profielfoto.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
+            <h2>MyLibrary</h2>
+            <img src="images/boek.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
             <p>
-                Een voorbeeld opdracht waar in de plaats nog een echte project van mij in de plaats gaat komen.
+               MyLibrary is een persoonlijke boeken-app waarmee lezers via hun camera ISBN-barcodes scannen om hun boekenverzameling, leesstatussen en persoonlijke recensies moeiteloos te beheren en bij te houden.
+            </p>
+            <p><strong>Gebruikte technologieën:</strong></p>
+            <ul>
+                <li>TypeScript & React Native (Expo)</li>
+                <li>Supabase (PostgreSQL & OAuth)</li>
+                <li>Zustand (met AsyncStorage)</li>
+            </ul>
+            <p>
+                <a href="https://github.com/ADmrkynk/WPFW-Opdracht1" target="_blank">bekijk de code op GitHub &rarr;</a>
+            </p>
+        </article>
+
+        <article>
+            <h2>Interactive Analytics Dashboard</h2>
+            <img src="images/dashboard.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
+            <p>
+                Voor dit project heb ik een interactief web-dashboard ontworpen en gebouwd waarmee kernstatistieken van een platform overzichtelijk worden gevisualiseerd. De focus lag op het helder structureren van complexe data, een intuïtieve gebruikerservaring (UX) en een strakke, moderne lay-out met responsive grafieken en tabellen.
             </p>
             <p><strong>Gebruikte technologieën:</strong></p>
             <ul>
@@ -48,33 +71,17 @@
         </article>
 
         <article>
-            <h2>Voorbeeld opdracht</h2>
-            <img src="images/profielfoto.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
+            <h2>Facto</h2>
+            <img src="images/facto.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
             <p>
-                Een voorbeeld opdracht waar in de plaats nog een echte project van mij in de plaats gaat komen.
+                Facto is een desktopapplicatie waarmee je eenvoudig klanten kunt beheren, gewerkte uren en tarieven kunt registreren en automatisch professionele PDF-facturen kunt genereren.
             </p>
             <p><strong>Gebruikte technologieën:</strong></p>
             <ul>
-                <li>Semantische HTML5</li>
-                <li>CSS3</li>
-                <li>Git & GitHub</li>
-            </ul>
-            <p>
-                <a href="https://github.com/ADmrkynk/WPFW-Opdracht1" target="_blank">bekijk de code op GitHub &rarr;</a>
-            </p>
-        </article>
-
-        <article>
-            <h2>Voorbeeld opdracht</h2>
-            <img src="images/profielfoto.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
-            <p>
-                Een voorbeeld opdracht waar in de plaats nog een echte project van mij in de plaats gaat komen.
-            </p>
-            <p><strong>Gebruikte technologieën:</strong></p>
-            <ul>
-                <li>Semantische HTML5</li>
-                <li>CSS3</li>
-                <li>Git & GitHub</li>
+                <li>
+                    TypeScript met React (v19), gebundeld via Vite en gestyled met Tailwind CSS.</li>
+                <li>Tauri v2 aangedreven door Rust voor een lichtgewicht, native desktopervaring en integratie met het lokale bestandssysteem.</li>
+                <li>jsPDF (inclusief jspdf-autotable) voor het opbouwen en exporteren van PDF-facturen, gecombineerd met Lucide React voor de iconen.</li>
             </ul>
             <p>
                 <a href="https://github.com/ADmrkynk/WPFW-Opdracht1" target="_blank">bekijk de code op GitHub &rarr;</a>
