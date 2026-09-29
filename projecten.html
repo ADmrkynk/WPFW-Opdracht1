@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <script src="JavaScript/project.js" defer></script>
 
 </head>
 <body>
@@ -32,63 +33,18 @@
         <p>
             Hier is een selectie van projecten waar ik tijdens mijn studie en in mijn vrije tijd aan heb gewerkt. 
         </p>
+
+        <div class="filter-controls" role="group" aria-label="Filter projecten op categorie">
+            <button type="button" class="filter-btn active" data-category="all">Alles</button>
+            <button type="button" class="filter-btn" data-category="mobile">Mobile</button>
+            <button type="button" class="filter-btn" data-category="frontend">Frontend</button>
+            <button type="button" class="filter-btn" data-category="desktop">Desktop</button>    
+        </div>
     </section>
 
-    <section>
-
-        <article>
-            <h2>MyLibrary</h2>
-            <img src="images/boek.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
-            <p>
-               MyLibrary is een persoonlijke boeken-app waarmee lezers via hun camera ISBN-barcodes scannen om hun boekenverzameling, leesstatussen en persoonlijke recensies moeiteloos te beheren en bij te houden.
-            </p>
-            <p><strong>Gebruikte technologieën:</strong></p>
-            <ul>
-                <li>TypeScript & React Native (Expo)</li>
-                <li>Supabase (PostgreSQL & OAuth)</li>
-                <li>Zustand (met AsyncStorage)</li>
-            </ul>
-            <p>
-                <a href="https://github.com/ADmrkynk/WPFW-Opdracht1" target="_blank">bekijk de code op GitHub &rarr;</a>
-            </p>
-        </article>
-
-        <article>
-            <h2>Interactive Analytics Dashboard</h2>
-            <img src="images/dashboard.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
-            <p>
-                Voor dit project heb ik een interactief web-dashboard ontworpen en gebouwd waarmee kernstatistieken van een platform overzichtelijk worden gevisualiseerd. De focus lag op het helder structureren van complexe data, een intuïtieve gebruikerservaring (UX) en een strakke, moderne lay-out met responsive grafieken en tabellen.
-            </p>
-            <p><strong>Gebruikte technologieën:</strong></p>
-            <ul>
-                <li>Semantische HTML5</li>
-                <li>CSS3</li>
-                <li>Git & GitHub</li>
-            </ul>
-            <p>
-                <a href="https://github.com/ADmrkynk/WPFW-Opdracht1" target="_blank">bekijk de code op GitHub &rarr;</a>
-            </p>
-        </article>
-
-        <article>
-            <h2>Facto</h2>
-            <img src="images/facto.jpg" alt="Screenshot van voorbeeld opdracht" width="250">
-            <p>
-                Facto is een desktopapplicatie waarmee je eenvoudig klanten kunt beheren, gewerkte uren en tarieven kunt registreren en automatisch professionele PDF-facturen kunt genereren.
-            </p>
-            <p><strong>Gebruikte technologieën:</strong></p>
-            <ul>
-                <li>
-                    TypeScript met React (v19), gebundeld via Vite en gestyled met Tailwind CSS.</li>
-                <li>Tauri v2 aangedreven door Rust voor een lichtgewicht, native desktopervaring en integratie met het lokale bestandssysteem.</li>
-                <li>jsPDF (inclusief jspdf-autotable) voor het opbouwen en exporteren van PDF-facturen, gecombineerd met Lucide React voor de iconen.</li>
-            </ul>
-            <p>
-                <a href="https://github.com/ADmrkynk/WPFW-Opdracht1" target="_blank">bekijk de code op GitHub &rarr;</a>
-            </p>
-        </article> 
-        </section>      
-     
+    <section id="projects-container">
+        
+    </section>
 
 </main>
 
