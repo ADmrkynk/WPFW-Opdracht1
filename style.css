@@ -262,3 +262,105 @@ footer p {
         gap: 0.75rem;
     }
 }
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1e7368;
+    color: #ffffff !important;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.github-btn:hover {
+    background-color: #156250;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.github-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.github-widget {                                                                                                                                                                                                   
+        background-color: #f9fafb;                                                                                                                                                                                     
+        border: 1px solid #e5e7eb;                                                                                                                                                                                     
+        border-radius: 12px;                                                                                                                                                                                           
+        padding: 1rem;                                                                                                                                                                                                 
+        margin-top: 0.5rem;                                                                                                                                                                                            
+        text-align: center;                                                                                                                                                                                            
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .github-status-badge {                                                                                                                                                                                             
+        display: inline-flex;                                                                                                                                                                                          
+        align-items: center;                                                                                                                                                                                           
+        gap: 0.4rem;                                                                                                                                                                                                   
+        font-size: 0.75rem;                                                                                                                                                                                            
+        font-weight: 600;                                                                                                                                                                                              
+        color: #1e7e68;                                                                                                                                                                                                
+        background-color: #ecfdf5;                                                                                                                                                                                     
+        padding: 0.2rem 0.6rem;                                                                                                                                                                                        
+        border-radius: 9999px;                                                                                                                                                                                         
+        border: 1px solid #a7f3d0;                                                                                                                                                                                     
+        margin-bottom: 0.5rem;                                                                                                                                                                                         
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .live-indicator {                                                                                                                                                                                                  
+        width: 8px;                                                                                                                                                                                                    
+        height: 8px;                                                                                                                                                                                                   
+        background-color: #10b981;                                                                                                                                                                                     
+        border-radius: 50%;                                                                                                                                                                                            
+        display: inline-block;                                                                                                                                                                                         
+        box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);                                                                                                                                                                 
+        animation: pulse 2s infinite;                                                                                                                                                                                  
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    @keyframes pulse {                                                                                                                                                                                                 
+        0%, 100% { opacity: 1; transform: scale(1); }                                                                                                                                                                  
+        50% { opacity: 0.6; transform: scale(0.85); }                                                                                                                                                                  
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .github-username {                                                                                                                                                                                                 
+        font-size: 0.95rem;                                                                                                                                                                                            
+        font-weight: 700;                                                                                                                                                                                              
+        color: #1f2937;                                                                                                                                                                                                
+        margin-bottom: 0.75rem;                                                                                                                                                                                        
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .github-metrics {                                                                                                                                                                                                  
+        display: grid;                                                                                                                                                                                                 
+        grid-template-columns: 1fr 1fr;                                                                                                                                                                                
+        gap: 0.75rem;                                                                                                                                                                                                  
+        margin-bottom: 1rem;                                                                                                                                                                                           
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .metric-box {                                                                                                                                                                                                      
+        background-color: #ffffff;                                                                                                                                                                                     
+        border: 1px solid #e5e7eb;                                                                                                                                                                                     
+        border-radius: 8px;                                                                                                                                                                                            
+        padding: 0.6rem 0.4rem;                                                                                                                                                                                        
+        display: flex;                                                                                                                                                                                                 
+        flex-direction: column;                                                                                                                                                                                        
+        align-items: center;                                                                                                                                                                                           
+    }
+  
+    .metric-number {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e7e68;
+        line-height: 1.2;
+    }
+  
+    .metric-label {
+        font-size: 0.7rem;
+        color: #6b7280;
+        margin-top: 0.2rem;
+    }
