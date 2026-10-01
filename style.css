@@ -240,6 +240,10 @@ footer p {
         align-items: start;
     }
 
+    main:has(aside) > * {
+        margin-bottom: 0;
+    }
+
     #projects-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -371,7 +375,6 @@ footer p {
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     padding: 1.5rem;
-    margin-top: 1rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -388,7 +391,7 @@ footer p {
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -417,28 +420,32 @@ footer p {
     box-shadow: 0 0 0 3px rgba(30, 115, 104, 0.15);
 }
 
+.error-message {
+    color: #dc2626;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.error-message:empty {
+    display: none;
+}
+
 .submit-btn {
     background-color: #1e7368;
     color: #ffffff;
     border: none;
-    border-radius: 6px;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
+    border-radius: 9999px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
 }
 
 .submit-btn:hover {
     background-color: #156250;
     transform: translateY(-1px);
-}
-
-.error-message {
-    color: #dc2626;
-    font-size: 0.8rem;
-    margin-top: 0.35rem;
-    min-height: 1.2rem;
 }
 
 .input-error {
