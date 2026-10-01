@@ -283,10 +283,10 @@ footer p {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-.github-btn svg {
+.github-btn svg,
+.github-btn img {
     width: 16px;
     height: 16px;
-    fill: currentColor;
     flex-shrink: 0;
 }
 
