@@ -240,7 +240,7 @@ footer p {
         align-items: start;
     }
 
-    main section:nth-of-type(2) {
+    #projects-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -253,7 +253,7 @@ footer p {
 
 @media (min-width: 1024px) {
     
-    main section:nth-of-type(2) {
+    #projects-container {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
@@ -364,3 +364,90 @@ footer p {
         color: #6b7280;
         margin-top: 0.2rem;
     }
+
+.contact-card {
+    grid-column: 1 / -1;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card > p {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #374151;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1e7368;
+    box-shadow: 0 0 0 3px rgba(30, 115, 104, 0.15);
+}
+
+.submit-btn {
+    background-color: #1e7368;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background-color: #156250;
+    transform: translateY(-1px);
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.8rem;
+    margin-top: 0.35rem;
+    min-height: 1.2rem;
+}
+
+.input-error {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2;
+}
+
+.success-message {
+    color: #15803d;
+    font-weight: 600;
+    margin-top: 1rem;
+}
