@@ -184,6 +184,38 @@ section a:hover {
     margin-bottom: 0;
 }
 
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.filter-btn.active {
+    background-color: #1e7e68;
+    color: #ffffff;
+    border-color: #1e7e68;
+}
+
 footer {
     background-color: #ffffff;
     border-top: 1px solid #e5e7eb;
@@ -208,7 +240,11 @@ footer p {
         align-items: start;
     }
 
-    main section:nth-of-type(2) {
+    main:has(aside) > * {
+        margin-bottom: 0;
+    }
+
+    #projects-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
@@ -221,7 +257,7 @@ footer p {
 
 @media (min-width: 1024px) {
     
-    main section:nth-of-type(2) {
+    #projects-container {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
@@ -229,4 +265,196 @@ footer p {
     nav ul {
         gap: 0.75rem;
     }
+}
+
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1e7368;
+    color: #ffffff !important;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.github-btn:hover {
+    background-color: #156250;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.github-btn svg,
+.github-btn img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.github-widget {                                                                                                                                                                                                   
+        background-color: #f9fafb;                                                                                                                                                                                     
+        border: 1px solid #e5e7eb;                                                                                                                                                                                     
+        border-radius: 12px;                                                                                                                                                                                           
+        padding: 1rem;                                                                                                                                                                                                 
+        margin-top: 0.5rem;                                                                                                                                                                                            
+        text-align: center;                                                                                                                                                                                            
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .github-status-badge {                                                                                                                                                                                             
+        display: inline-flex;                                                                                                                                                                                          
+        align-items: center;                                                                                                                                                                                           
+        gap: 0.4rem;                                                                                                                                                                                                   
+        font-size: 0.75rem;                                                                                                                                                                                            
+        font-weight: 600;                                                                                                                                                                                              
+        color: #1e7e68;                                                                                                                                                                                                
+        background-color: #ecfdf5;                                                                                                                                                                                     
+        padding: 0.2rem 0.6rem;                                                                                                                                                                                        
+        border-radius: 9999px;                                                                                                                                                                                         
+        border: 1px solid #a7f3d0;                                                                                                                                                                                     
+        margin-bottom: 0.5rem;                                                                                                                                                                                         
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .live-indicator {                                                                                                                                                                                                  
+        width: 8px;                                                                                                                                                                                                    
+        height: 8px;                                                                                                                                                                                                   
+        background-color: #10b981;                                                                                                                                                                                     
+        border-radius: 50%;                                                                                                                                                                                            
+        display: inline-block;                                                                                                                                                                                         
+        box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);                                                                                                                                                                 
+        animation: pulse 2s infinite;                                                                                                                                                                                  
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    @keyframes pulse {                                                                                                                                                                                                 
+        0%, 100% { opacity: 1; transform: scale(1); }                                                                                                                                                                  
+        50% { opacity: 0.6; transform: scale(0.85); }                                                                                                                                                                  
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .github-username {                                                                                                                                                                                                 
+        font-size: 0.95rem;                                                                                                                                                                                            
+        font-weight: 700;                                                                                                                                                                                              
+        color: #1f2937;                                                                                                                                                                                                
+        margin-bottom: 0.75rem;                                                                                                                                                                                        
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .github-metrics {                                                                                                                                                                                                  
+        display: grid;                                                                                                                                                                                                 
+        grid-template-columns: 1fr 1fr;                                                                                                                                                                                
+        gap: 0.75rem;                                                                                                                                                                                                  
+        margin-bottom: 1rem;                                                                                                                                                                                           
+    }                                                                                                                                                                                                                  
+                                                                                                                                                                                                                       
+    .metric-box {                                                                                                                                                                                                      
+        background-color: #ffffff;                                                                                                                                                                                     
+        border: 1px solid #e5e7eb;                                                                                                                                                                                     
+        border-radius: 8px;                                                                                                                                                                                            
+        padding: 0.6rem 0.4rem;                                                                                                                                                                                        
+        display: flex;                                                                                                                                                                                                 
+        flex-direction: column;                                                                                                                                                                                        
+        align-items: center;                                                                                                                                                                                           
+    }
+  
+    .metric-number {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e7e68;
+        line-height: 1.2;
+    }
+  
+    .metric-label {
+        font-size: 0.7rem;
+        color: #6b7280;
+        margin-top: 0.2rem;
+    }
+
+.contact-card {
+    grid-column: 1 / -1;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card > p {
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #374151;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1e7368;
+    box-shadow: 0 0 0 3px rgba(30, 115, 104, 0.15);
+}
+
+.error-message {
+    color: #dc2626;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+.submit-btn {
+    background-color: #1e7368;
+    color: #ffffff;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #156250;
+    transform: translateY(-1px);
+}
+
+.input-error {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2;
+}
+
+.success-message {
+    color: #15803d;
+    font-weight: 600;
+    margin-top: 1rem;
 }
