@@ -1,0 +1,14 @@
+# .NET build artifacts
+bin/
+obj/
+**/bin/
+**/obj/
+
+# User-specific files & IDE
+.vscode/
+.idea/
+*.user
+*.suo
+
+# macOS
+.DS_Store
