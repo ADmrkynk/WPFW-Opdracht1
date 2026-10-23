@@ -1,13 +1,23 @@
+using Backend.Data;
+using Backend.Endpoints;
+using Backend.Services;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddValidation();
+
+builder.Services.AddDbContext<PortfolioDb>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<IBlogPostService, BlogPostService>();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -16,6 +26,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/", () => "Portfolio api is online en klaar voor gebruik.");
+app.MapProjectEndpoints();
+app.MapBlogPostEndpoints();
 
 app.Run();
