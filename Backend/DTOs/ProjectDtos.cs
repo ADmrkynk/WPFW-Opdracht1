@@ -17,9 +17,9 @@ public record CreateProjectDto(
 );
 
 public record UpdateProjectDto (
-    int ID,
     string Title,
-    String Content,
-    DateTime PublishedDate
+    string Description,
+    string Category,
+    string GitHubUrl
 );
 

@@ -13,7 +13,7 @@ public record CreateBlogPostDto(
     DateTime PublishedDate
 );
 
-public record UpdateBlogPost(
+public record UpdateBlogPostDto(
     string Title,
     string Content
 );
