@@ -1,5 +1,3 @@
-using System.Buffers.Text;
-using System.Dynamic;
 using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,5 +12,3 @@ public sealed class PortfolioDb : DbContext
     public DbSet<Project> Projects => Set<Project>();
     public DbSet<BlogPost> BlogPosts => Set<BlogPost>();
 }
-
-
