@@ -1,38 +1,37 @@
 using Backend.Data;
 using Backend.DTOs;
 using Backend.Models;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services;
 
 public class ProjectService : IProjectService
 {
- private readonly PortfolioDb _db;
+    private readonly PortfolioDb _db;
 
- public ProjectService (PortfolioDb db)
+    public ProjectService(PortfolioDb db)
     {
         _db = db;
     }   
 
-    public async Task<IReadOnlyList<ProjectDTO>> GetAllAsync (CancellationToken ct = default)
+    public async Task<IReadOnlyList<ProjectDto>> GetAllAsync(CancellationToken ct = default)
     {
         return await _db.Projects
-        .AsNoTracking()
-        .Select(p => new ProjectDTO(p.ID, p.Title, p.Description, p.Category, p.GitHubUrl, p.CreatedDate))
-        .ToListAsync(ct);
+            .AsNoTracking()
+            .Select(p => new ProjectDto(p.Id, p.Title, p.Description, p.Category, p.GitHubUrl, p.CreatedDate))
+            .ToListAsync(ct);
     }
 
-    public async Task<ProjectDTO?> GetByIdAsync(int id, CancellationToken ct = default)
+    public async Task<ProjectDto?> GetByIdAsync(int id, CancellationToken ct = default)
     {
         return await _db.Projects
-        .AsNoTracking()
-        .Where (p => p.ID == id)
-        .Select(p => new ProjectDTO (p.ID, p.Title, p.Description, p.Category, p.GitHubUrl, p.CreatedDate))
-        .FirstOrDefaultAsync(ct);
+            .AsNoTracking()
+            .Where(p => p.Id == id)
+            .Select(p => new ProjectDto(p.Id, p.Title, p.Description, p.Category, p.GitHubUrl, p.CreatedDate))
+            .FirstOrDefaultAsync(ct);
     }
 
-    public async Task<ProjectDTO> CreateAsync(CreateProjectDto dto, CancellationToken ct = default)
+    public async Task<ProjectDto> CreateAsync(CreateProjectDto dto, CancellationToken ct = default)
     {
         var project = new Project
         {
@@ -46,12 +45,12 @@ public class ProjectService : IProjectService
         _db.Projects.Add(project);
         await _db.SaveChangesAsync(ct);
 
-        return new ProjectDTO(project.ID, project.Title, project.Description, project.Category, project.GitHubUrl, project.CreatedDate);
+        return new ProjectDto(project.Id, project.Title, project.Description, project.Category, project.GitHubUrl, project.CreatedDate);
     }
 
     public async Task<bool> UpdateAsync(int id, UpdateProjectDto dto, CancellationToken ct = default)
     {
-        var project = await _db.Projects.FirstOrDefaultAsync(p => p.ID == id, ct);
+        var project = await _db.Projects.FirstOrDefaultAsync(p => p.Id == id, ct);
         if (project is null)
         {
             return false;
@@ -68,7 +67,7 @@ public class ProjectService : IProjectService
 
     public async Task<bool> DeleteAsync(int id, CancellationToken ct = default)
     {
-        var project = await _db.Projects.FirstOrDefaultAsync(p => p.ID == id, ct);
+        var project = await _db.Projects.FirstOrDefaultAsync(p => p.Id == id, ct);
         if (project is null)
         {
             return false;

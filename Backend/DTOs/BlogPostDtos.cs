@@ -1,7 +1,7 @@
 namespace Backend.DTOs;
 
-public record BlogPostDto (
-    int ID,
+public record BlogPostDto(
+    int Id,
     string Title,
     string Content,
     DateTime PublishedDate
@@ -9,8 +9,7 @@ public record BlogPostDto (
 
 public record CreateBlogPostDto(
     string Title,
-    string Content,
-    DateTime PublishedDate
+    string Content
 );
 
 public record UpdateBlogPostDto(

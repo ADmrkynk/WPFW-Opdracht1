@@ -1,6 +1,5 @@
 using Backend.DTOs;
 using Backend.Services;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
 
 namespace Backend.Endpoints;
 
@@ -27,11 +26,11 @@ public static class ProjectEndpoints
         .WithName("GetProjectById");
 
         group.MapPost("", async (CreateProjectDto dto, IProjectService service, CancellationToken ct) =>
-          {
-             var created = await service.CreateAsync(dto, ct);
-             return TypedResults.CreatedAtRoute(created, "GetProjectById", new { id = created.ID });
-          })
-         .WithName("CreateProject");
+        {
+            var created = await service.CreateAsync(dto, ct);
+            return TypedResults.CreatedAtRoute(created, "GetProjectById", new { id = created.Id });
+        })
+        .WithName("CreateProject");
 
         group.MapPut("/{id:int}", async (int id, UpdateProjectDto dto, IProjectService service, CancellationToken ct) =>
         {

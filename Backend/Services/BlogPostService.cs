@@ -16,18 +16,18 @@ public class BlogPostService : IBlogPostService
     public async Task<IReadOnlyList<BlogPostDto>> GetAllAsync(CancellationToken ct = default)
     {
         return await _db.BlogPosts
-        .AsNoTracking()
-        .Select(b => new BlogPostDto(b.ID, b.Title, b.Content, b.PublishedDate))
-        .ToListAsync(ct);
+            .AsNoTracking()
+            .Select(b => new BlogPostDto(b.Id, b.Title, b.Content, b.PublishedDate))
+            .ToListAsync(ct);
     }
 
     public async Task<BlogPostDto?> GetByIdAsync(int id, CancellationToken ct = default)
     {
         return await _db.BlogPosts
-        .AsNoTracking()
-        .Where(b=> b.ID == id)
-        .Select(b => new BlogPostDto(b.ID, b.Title, b.Content, b.PublishedDate))
-        .FirstOrDefaultAsync(ct);
+            .AsNoTracking()
+            .Where(b => b.Id == id)
+            .Select(b => new BlogPostDto(b.Id, b.Title, b.Content, b.PublishedDate))
+            .FirstOrDefaultAsync(ct);
     }
 
     public async Task<BlogPostDto> CreateAsync(CreateBlogPostDto dto, CancellationToken ct = default)
@@ -42,13 +42,12 @@ public class BlogPostService : IBlogPostService
         _db.BlogPosts.Add(blogPost);
         await _db.SaveChangesAsync(ct);
 
-        return new BlogPostDto(blogPost.ID, blogPost.Title, blogPost.Content, blogPost.PublishedDate);
- 
+        return new BlogPostDto(blogPost.Id, blogPost.Title, blogPost.Content, blogPost.PublishedDate);
     }
 
     public async Task<bool> UpdateAsync(int id, UpdateBlogPostDto dto, CancellationToken ct = default)
     {
-        var blogPost = await _db.BlogPosts.FirstOrDefaultAsync(b => b.ID == id, ct);
+        var blogPost = await _db.BlogPosts.FirstOrDefaultAsync(b => b.Id == id, ct);
         if (blogPost is null)
         {
             return false;
@@ -63,7 +62,7 @@ public class BlogPostService : IBlogPostService
 
     public async Task<bool> DeleteAsync(int id, CancellationToken ct = default)
     {
-        var blogPost = await _db.BlogPosts.FirstOrDefaultAsync (b => b.ID == id, ct);
+        var blogPost = await _db.BlogPosts.FirstOrDefaultAsync(b => b.Id == id, ct);
         if (blogPost is null)
         {
             return false;
