@@ -4,7 +4,7 @@ Backend Web API voor het persoonlijke portfolio, gebouwd met **ASP.NET Core Web 
 
 ---
 
-## 🚀 Technologieën & Versies
+## Technologieën & Versies
 
 * **.NET Versie:** .NET 10.0 (C# 13)
 * **Framework:** ASP.NET Core Web API (Minimal API)
@@ -14,7 +14,7 @@ Backend Web API voor het persoonlijke portfolio, gebouwd met **ASP.NET Core Web 
 
 ---
 
-## 🏛️ Gekozen API-Stijl & Codestructuur
+## Gekozen API-Stijl & Codestructuur
 
 Voor deze opdracht is gekozen voor de **Minimal API** stijl, gecombineerd met een duidelijke **gelaagde architectuur (Separation of Concerns)**.
 
@@ -48,7 +48,7 @@ Backend/
 
 ---
 
-## 🗄️ SQL Server Configuratie & Database Initialisatie
+## SQL Server Configuratie & Database Initialisatie
 
 ### 1. Connection String
 De connection string staat geconfigureerd in `Backend/appsettings.json`:
@@ -82,7 +82,7 @@ Hierdoor hoeven er geen handmatige migraties te worden uitgevoerd; de tabellen `
 
 ---
 
-## ▶️ Applicatie Starten
+##  Applicatie Starten
 
 1. Navigeer naar de `Backend` map:
    ```bash
@@ -100,7 +100,7 @@ Hierdoor hoeven er geen handmatige migraties te worden uitgevoerd; de tabellen `
 
 ---
 
-## 📡 Beschikbare API Endpoints
+## Beschikbare API Endpoints
 
 ### Projecten (`/api/projects`)
 * `GET /api/projects` - Haal alle projecten op (retourneert `IReadOnlyList<ProjectDto>`)
