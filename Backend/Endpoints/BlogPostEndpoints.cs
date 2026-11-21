@@ -1,5 +1,6 @@
 using Backend.DTOs;
 using Backend.Services;
+using Backend.Auth;
 
 namespace Backend.Endpoints;
 
@@ -30,7 +31,8 @@ public static class BlogPostEndpoints
             var created = await service.CreateAsync(dto, ct);
             return TypedResults.CreatedAtRoute(created, "GetBlogPostById", new { id = created.Id });
         })
-        .WithName("CreateBlogPost");
+        .WithName("CreateBlogPost")
+        .RequireAuthorization(Policies.CanEditPortfolio);
 
         group.MapPut("/{id:int}", async (int id, UpdateBlogPostDto dto, IBlogPostService service, CancellationToken ct) =>
         {
@@ -39,7 +41,8 @@ public static class BlogPostEndpoints
                 ? TypedResults.NoContent() 
                 : (IResult)TypedResults.NotFound();
         })
-        .WithName("UpdateBlogPost");
+        .WithName("UpdateBlogPost")
+        .RequireAuthorization(Policies.CanEditPortfolio);
 
         group.MapDelete("/{id:int}", async (int id, IBlogPostService service, CancellationToken ct) =>
         {
@@ -48,7 +51,8 @@ public static class BlogPostEndpoints
                 ? TypedResults.NoContent() 
                 : (IResult)TypedResults.NotFound();
         })
-        .WithName("DeleteBlogPost");
+        .WithName("DeleteBlogPost")
+        .RequireAuthorization(Policies.CanEditPortfolio);
 
         return group;
     }

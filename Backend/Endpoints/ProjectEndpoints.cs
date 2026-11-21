@@ -1,5 +1,6 @@
 using Backend.DTOs;
 using Backend.Services;
+using Backend.Auth;
 
 namespace Backend.Endpoints;
 
@@ -30,7 +31,8 @@ public static class ProjectEndpoints
             var created = await service.CreateAsync(dto, ct);
             return TypedResults.CreatedAtRoute(created, "GetProjectById", new { id = created.Id });
         })
-        .WithName("CreateProject");
+        .WithName("CreateProject")
+        .RequireAuthorization(Policies.CanEditPortfolio);
 
         group.MapPut("/{id:int}", async (int id, UpdateProjectDto dto, IProjectService service, CancellationToken ct) =>
         {
@@ -39,7 +41,8 @@ public static class ProjectEndpoints
                 ? TypedResults.NoContent()
                 : (IResult)TypedResults.NotFound();
         })
-        .WithName("UpdateProject");        
+        .WithName("UpdateProject")
+        .RequireAuthorization(Policies.CanEditPortfolio);      
 
         group.MapDelete("/{id:int}", async (int id, IProjectService service, CancellationToken ct) =>
         {
@@ -48,7 +51,8 @@ public static class ProjectEndpoints
                 ? TypedResults.NoContent()
                 :(IResult) TypedResults.NotFound();
         })
-        .WithName("DeleteProject");
+        .WithName("DeleteProject")
+        .RequireAuthorization(Policies.CanEditPortfolio);
 
         return group;
     }
